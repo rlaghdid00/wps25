@@ -1,0 +1,81 @@
+/* --- 컬러 팔레트 --- */
+:root {
+    --bg-main: #f4f4f1;
+    --bg-light: #e1dbd7;
+    --text-dark: #221516;
+    --accent: #3b0510;
+}
+
+/* --- 기본 스타일 --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    background-color: var(--bg-main); 
+    color: var(--text-dark); 
+    font-family: 'Apple SD Gothic Neo', sans-serif; 
+    line-height: 1.6; 
+}
+
+/* --- 네비게이션 --- */
+.navbar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 30px 50px; 
+    position: sticky; 
+    top: 0; 
+    background: rgba(244,244,241,0.8); 
+    backdrop-filter: blur(10px); 
+    z-index: 1000; 
+}
+.logo a { font-weight: bold; font-size: 1.2rem; color: var(--accent); text-decoration: none; }
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin-left: 30px; }
+.nav-links li a { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+/* --- About 페이지 레이아웃 --- */
+.about-page { padding: 80px 50px; max-width: 1000px; margin: 0 auto; }
+.intro-section { margin-bottom: 80px; text-align: center; }
+.intro-section h2 { font-size: 2rem; margin-bottom: 20px; color: var(--accent); }
+
+.about-wrapper { display: grid; grid-template-columns: 350px 1fr; gap: 80px; }
+
+/* --- 프로필 카드 스타일 (이미지 고정 포함) --- */
+.persona-card { background: #fff; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+.profile-circle { 
+    width: 120px; 
+    height: 120px; 
+    background: var(--bg-light); 
+    border-radius: 50%; 
+    margin: 0 auto 20px; 
+    overflow: hidden; /* 이미지 삐져나옴 방지 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-circle img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* 이미지가 찌그러지지 않고 꽉 차게 */
+}
+.tag-box span { display: inline-block; background: var(--bg-light); padding: 6px 15px; border-radius: 20px; margin: 5px; font-size: 0.75rem; font-weight: 600; color: var(--accent); }
+
+.quote-box { background: var(--text-dark); color: #fff; padding: 30px; border-radius: 20px; margin-top: 20px; text-align: center; line-height: 1.6; font-weight: 300; font-style: italic; }
+
+/* --- 경력 및 기술 정보 --- */
+.info-card { padding: 30px 0; border-top: 1px solid var(--bg-light); }
+.info-card h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 15px; }
+.info-card p { line-height: 1.8; color: #444; margin-bottom: 10px; }
+.info-card li { margin-bottom: 8px; padding-left: 15px; position: relative; list-style: none; color: #444; }
+.info-card li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
+
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+
+/* --- 푸터 --- */
+footer { background-color: var(--text-dark); color: var(--bg-light); padding: 40px 50px; text-align: center; margin-top: 100px; font-size: 0.8rem; }
+
+/* --- 모바일 반응형 --- */
+@media (max-width: 768px) { 
+    .about-wrapper { grid-template-columns: 1fr; gap: 40px; } 
+    .about-page { padding: 40px 20px; }
+    .navbar { padding: 20px; }
+}
